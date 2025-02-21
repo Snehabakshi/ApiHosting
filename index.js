@@ -3,7 +3,9 @@ const app = express();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
+app.get('/', (req, res) => {
+  res.send('Welcome to the API! Use POST /api/process to process data.');
+})
 // POST endpoint for the API task
 app.post('/api/process', (req, res) => {
   const inputData = req.body.data;
